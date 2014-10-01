@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<link href="css/style.css" rel="stylesheet">
-		<script src="countdown.js"></script>
 	</head>
 	<body>
 		<div id="control">
@@ -17,17 +16,19 @@
 			<select id="option">
 				<option value="add">Additions</option>
 				<option value="sub">Subtractions</option>
+				<option value="ran">Random</option>
 			</select>
 			<input type="button" value="Start" id="start"></input>
 		</div>
 		<div id="main">
-			<div id="timer">
-			</div>
 			<div id="facts">
 				<div id="fact"></div>
 			</div>
 			<div id="results">
 				<p>Correct answers: <span id="count"></span></p>
+			</div>
+			<div = id="timer">
+				<p>Finished in: <span id="time"></span></p>
 			</div>
 		</div>
 		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>

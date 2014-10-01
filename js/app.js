@@ -1,5 +1,7 @@
 "use strict";
 
+var T = 0;
+
 function random3(max) {
 	max = max || 10;
 	var rnums = [0,0,0];
@@ -11,22 +13,26 @@ function random3(max) {
 
 function Fact(type) {
 	this.type = type || "add";
-	
-	if (this.type === "add") {
-		this.ans = 2;
-	} else if ( this.type === "sub" ) {
-		this.ans = 0;
-	}
-	this.reset();
+	this.set();
 }
 
-Fact.prototype.reset = function() {
+Fact.prototype.set = function() {
+	if (this.type === "ran") {
+		var i = Math.floor(Math.random() * 2);
+		if (i === 0) this.reset("add");
+		else this.reset("sub");
+	} else this.reset(this.type);
+}
+
+Fact.prototype.reset = function(type) {
 	this.nums = random3();
-	if ( this.type === "add" ) {
+	if ( type === "add" ) {
 		this.div = $("<p>").text(this.nums[0] + "\n+" + this.nums[1]);
-	} else if ( this.type === "sub" ) {
+		this.ans = this.nums[2];
+	} else if ( type === "sub" ) {
 		this.div = $("<p>").text(this.nums[2] + "\n-" + this.nums[1]);
-	}
+		this.ans = this.nums[0];
+	} 
 }
 
 function update($div) {
@@ -45,7 +51,7 @@ function start() {
 	$("#results").show();
 	
 	$("#ans").keypress(function(e) {
-    if (e.which == 13 && $(this).val() == f.nums[f.ans]) {
+    if (e.which == 13 && $(this).val() == f.ans) {
 			count++;
 			$("#count").text(count);
 			if ( count == max ) {
@@ -53,18 +59,37 @@ function start() {
 				stop();
 				alert("YOU DID IT!");
 			} else {
-      f.reset();
+      f.set();
 			update(f.div);			
 			}
     }
 	});
+	T = timerToggle(T);
 	$("#facts").show();
 	$("#ans").focus();
+}
+
+function timerToggle(time) {
+	if (time > 0) {
+		var now = new Date(),
+				dif = Math.round((now.getTime() - time) / 1000),
+				sec = dif % 60,
+				min = (dif - sec)/60;
+		$("#time").text(min + " min " + sec + " sec");
+		$("#timer").show();
+		return 0;
+	}
+	else {
+		var now = new Date();
+		$("#timer").hide();
+		return now.getTime();
+	}
 }
 
 function stop() {
 	$("#facts").hide();
 	$("#fact").empty();
+	T = timerToggle(T);
 }
  
 function main() {
