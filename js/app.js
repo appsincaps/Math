@@ -48,8 +48,8 @@ function start() {																	// starting a new set of related facts
 			$("#count").text(count);
 			if ( count == max ) {
 				$("#start").val("Start");
-				stop();
 				alert("YOU DID IT!");
+				stop();
 			} else {
       f.set();
 			update(f.div);			
