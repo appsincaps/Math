@@ -17,6 +17,11 @@ html, body {
 	text-align: center;
 }
 
+#main {
+	float: left;
+	width: 300px;
+}
+
 #timer {
 	display: none;
 	margin: 20px;
@@ -25,6 +30,7 @@ html, body {
 #facts {
 	display: none;
 	margin: 20px;
+	padding-top: 50px;
 }
 
 #results {
@@ -55,4 +61,20 @@ html, body {
 	font-size: 30px;
 	text-align: right;
 	width: 90%;
+}
+
+#pics {
+	margin: 20px;
+}
+
+.image {
+	max-height: 600px;
+	max-width: 600px;
+}
+
+.white {
+	background-color: white;
+}
+.tran {
+	background-color: transparent;
 }
