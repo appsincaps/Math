@@ -1,7 +1,8 @@
 "use strict";
 
 																										// GLOBALS
-var T = 0;																					// time
+var T = 0,																					// time
+		pics = 13;																			// number of images
 
 
 																										// FACT FUNCTIONS
@@ -63,7 +64,7 @@ function start() {																	// starting a new set of related facts
 }
 
 function picStart(num) {																// adds a picture show for fun
-	var ran = Math.floor((Math.random() * 4) + 1),
+	var ran = Math.floor((Math.random() * pics) + 1),
 			$img = $("#image"+ran),
 			$cover = $("<div>").addClass('tran').attr('id','cover'),
 			w = $img.width(),
@@ -104,7 +105,7 @@ function stop() {																		// stops and cleans up after a fact set
  
 function main() {																		// MAIN EVENTS
 
-	for (var i=0; i<4; i++) {													// loads images (an optional part)
+	for (var i=0; i<pics; i++) {													// loads images (an optional part)
 		var $img = $("<img>").attr({
 			'id': 'image'+(i+1),
 			'src': 'images/image' + (i+1) + '.jpg'
