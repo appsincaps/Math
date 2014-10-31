@@ -37,7 +37,7 @@ function start() {																	// starting a new set of related facts
 			max = $("input[name='numOptions']:checked").val();
 			
 	$("#fact").append(f.div);
-	$("#fact").append($("<input>").attr("type","text").attr("id","ans"));
+	$("#fact").append($("<input>").attr("type","text").attr("id","ans").addClass("form-control"));
 	$("#count").text(count);
 	$("#results").show();
 	
@@ -59,7 +59,7 @@ function start() {																	// starting a new set of related facts
 	T = timerToggle(T);
 	$("#facts").show();
 	$("#pad").show();
-	$("#ans").focus();
+	$("#ans").blur();
 }
 
 function stop() {																		// stops and cleans up after a fact set
@@ -81,12 +81,13 @@ function main() {																		// MAIN EVENTS
 			$(this).val("Start");
 			stop();
 		}
+		$(this).blur();
 	});
 	
 	$(".padbtn").click( function() {									// initializes pad buttons
 		var input = $(this).text(),
 				ans = $("#ans").val();
-				
+		$(this).blur();
 		switch (input) {
 			case '0':
 			case '1':
@@ -99,17 +100,17 @@ function main() {																		// MAIN EVENTS
 			case '8':
 			case '9':
 				$("#ans").val(ans + input);
-				$("#ans").focus();
+				//$("#ans").blur();
 				break;
 			case 'Ok':
 				var e = jQuery.Event("keypress");
 				e.which = 13;
 				$("#ans").trigger(e);
-				$("#ans").focus();
+				//$("#ans").blur();
 				break;
 			case 'Del':
 				$("#ans").val('');
-				$("#ans").focus();
+				//$("#ans").blur();
 				break;
 			default:
 		}
