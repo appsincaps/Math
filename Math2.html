@@ -8,34 +8,64 @@
     <meta name="author" content="APPSINCAPS">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style2.css" rel="stylesheet">
 		<title>Math facts</title>
 	</head>
 	<body>
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h2 class="panel-title">Addition and subtraction facts:</h2>
+					<h1 class="panel-title">Addition and subtraction facts: </h1>
 				</div>
 				<div class="panel-body">
-					<div id="control">
-						<label>Number of facts:</label>
-						<select id="number">
-							<option value="30">30</option>
-							<option value="60">60</option>
-							<option value="120">120</option>
-						</select>
-						<label>Type of facts:</label>
-						<select id="option">
-							<option value="add">Additions</option>
-							<option value="sub">Subtractions</option>
-							<option value="ran">Random</option>
-						</select>
-						<input type="button" value="Start" id="start"></input>
-					</div>
+					<div class="row" id="control">
+						
+						<div class="input-group">
+							<label>Number of facts:&nbsp;</label>
+							<label class="radio-inline">
+								<input type="radio" name="numOptions" value="30" checked> 30
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="numOptions" value="60"> 60
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="numOptions" value="120"> 120
+							</label>
+						</div>
+						
+						<div class="input-group">
+							<label>Type of facts:&nbsp;</label>
+							<label class="radio-inline">
+								<input type="radio" name="typeOptions" value="add" checked> Add
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="typeOptions" value="sub"> Subtract
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="typeOptions" value="ran"> Random
+							</label>
+						</div>
+						
+						<input type="button" class="btn btn-lg btn-default" value="Start" id="start"></input>
+					</div> <!-- control -->
+					
 					<div id="main">
-						<div id="facts">
+						<div class="well" id="facts">
 							<div id="fact"></div>
+						</div>
+						<div id="pad">
+							<button class="padbtn btn btn-lg btn-default" id="b1">1</button>
+							<button class="padbtn btn btn-lg btn-default" id="b2">2</button>
+							<button class="padbtn btn btn-lg btn-default" id="b3">3</button>
+							<button class="padbtn btn btn-lg btn-default" id="b4">4</button>
+							<button class="padbtn btn btn-lg btn-default" id="b5">5</button>
+							<button class="padbtn btn btn-lg btn-default" id="b6">6</button>
+							<button class="padbtn btn btn-lg btn-default" id="b7">7</button>
+							<button class="padbtn btn btn-lg btn-default" id="b8">8</button>
+							<button class="padbtn btn btn-lg btn-default" id="b9">9</button>
+							<button class="padbtn btn btn-lg btn-default" id="bd">Del</button>
+							<button class="padbtn btn btn-lg btn-default" id="b0">0</button>
+							<button class="padbtn btn btn-lg btn-default" id="bk">Ok</button>
 						</div>
 						<div id="results">
 							<p>Correct answers: <span id="count"></span></p>
@@ -44,12 +74,12 @@
 							<p>Finished in: <span id="time"></span></p>
 						</div>
 					</div>
-					<div id="pics"></div>
+					
 				</div> <!-- panel-body -->
 			</div> <!-- panel -->
 		</div> <!-- container -->
 		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/app.js" type="text/javascript"></script>
+		<script src="js/app2.js" type="text/javascript"></script>
 	</body>
 </html>

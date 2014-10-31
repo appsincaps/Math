@@ -1,0 +1,76 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#control {
+	margin: 0 20px;
+}
+
+#main {
+	float: left;
+	width: 300px;
+}
+
+#timer {
+	display: none;
+	margin: 20px;
+}
+
+#facts {
+	float: left;
+	display: none;
+	margin: 20px;
+	padding-top: 20px;
+	width: 115px;
+}
+
+#results {
+	display: none;
+	margin: 20px;
+}
+
+#fact {
+	font-size: 30px;
+	line-height: 35px;
+	text-align: right;
+	margin: 10px;
+	padding: 0px;
+	width: 50px;
+}
+
+#fact p {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	color: black;
+}
+
+#fact input {
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	text-align: right;
+	width: 90%;
+}
+
+#start {
+	margin: 10px 0;
+	width: 320px;
+}
+
+#pad {
+	display: none;
+	margin-left: 170px;
+	margin-top: 20px;
+	width: 170px;
+}
+
+.padbtn {
+	margin: 1px;
+	padding: 0;
+	width: 50px;
+	height: 41px;
+}
