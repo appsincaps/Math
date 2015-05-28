@@ -1,11 +1,11 @@
 "use strict";
 
-																										// GLOBALS
+																									// GLOBALS
 var T = 0,																					// time
 		pics = 13;																			// number of images
 
 
-																										// FACT FUNCTIONS
+																								// FACT FUNCTIONS
 function Fact(type) {																// fact object
 	this.type = type || "add";
 	this.set();
@@ -27,6 +27,10 @@ Fact.prototype.reset = function(type) {							// resetting fact numbers
 	} else if ( type === "sub" ) {
 		this.div = $("<p>").text(this.nums[2] + "\n-" + this.nums[1]);
 		this.ans = this.nums[0];
+	}  else if ( type === "mul" ) {
+		this.nums[2] = this.nums[0] * this.nums[1]
+		this.div = $("<p>").text(this.nums[0] + "\n*" + this.nums[1]);
+		this.ans = this.nums[2];
 	} 
 }
 
